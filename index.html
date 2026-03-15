@@ -453,71 +453,142 @@
   /* ═══════════════════════════════════════════
      ROTAX SCROLL ANIMATION — CSS (prefixo rsa-)
   ═══════════════════════════════════════════ */
-  .rsa-section{position:relative;height:440vh;background:var(--bg-dark)}
-  .rsa-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
-  .rsa-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(251,178,60,0.028) 1px,transparent 1px),linear-gradient(90deg,rgba(251,178,60,0.028) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 75%)}
-  .rsa-glow{position:absolute;width:900px;height:900px;top:50%;left:50%;background:radial-gradient(circle,rgba(251,178,60,0.18) 0%,rgba(251,130,30,0.08) 35%,transparent 70%);border-radius:50%;transform:translate(-50%,-50%) scale(0);pointer-events:none;will-change:transform,opacity}
-  .rsa-splash{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);opacity:0;will-change:opacity,transform}
-  .rsa-splash.s1{width:400px;height:300px;background:radial-gradient(circle,rgba(251,178,60,0.12) 0%,transparent 70%);top:20%;left:15%}
-  .rsa-splash.s2{width:350px;height:350px;background:radial-gradient(circle,rgba(59,130,246,0.08) 0%,transparent 70%);bottom:15%;right:10%}
-  .rsa-headline{position:absolute;top:clamp(70px,11vh,110px);left:0;right:0;text-align:center;pointer-events:none;z-index:10}
-  .rsa-headline-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(251,178,60,0.1);border:1px solid rgba(251,178,60,0.22);border-radius:100px;padding:5px 16px 5px 10px;font-size:0.72rem;font-weight:700;color:#fbb23c;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:16px}
-  .rsa-badge-pulse{width:6px;height:6px;background:#fbb23c;border-radius:50%;animation:pulse 2s ease infinite}
-  .rsa-headline h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(1.7rem,3.8vw,2.9rem);color:#f5ede0;letter-spacing:-0.032em;line-height:1.08;margin-bottom:12px}
-  .rsa-headline p{font-size:clamp(0.88rem,1.4vw,1rem);color:rgba(245,237,224,0.45);font-weight:300;line-height:1.6}
-  .rsa-disc{position:absolute;top:50%;left:50%;width:92px;height:92px;border-radius:50%;background:#fbb23c;display:flex;align-items:center;justify-content:center;z-index:30;opacity:0;transform:translate(-50%,-50%) scale(0.2) rotate(0deg);box-shadow:0 0 0 18px rgba(251,178,60,0.08),0 0 0 36px rgba(251,178,60,0.04);will-change:transform,opacity,box-shadow}
-  .rsa-disc svg{width:44px;height:44px}
-  .rsa-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid rgba(251,178,60,0.25);transform:translate(-50%,-50%) scale(0.7);pointer-events:none;opacity:0}
-  .rsa-ring.r1{width:130px;height:130px;animation:rsaRing 2.2s ease-out 0.0s infinite}
-  .rsa-ring.r2{width:180px;height:180px;animation:rsaRing 2.2s ease-out 0.5s infinite}
-  .rsa-ring.r3{width:240px;height:240px;animation:rsaRing 2.2s ease-out 1.0s infinite}
-  .rsa-device{position:absolute;top:50%;left:50%;transform:translate(-50%,calc(-50% + 110vh));z-index:20;will-change:transform}
-  .rsa-phone{position:relative;width:268px;height:535px;background:linear-gradient(160deg,#1e1609 0%,#100b04 100%);border-radius:40px;border:1.5px solid rgba(251,178,60,0.18);box-shadow:0 0 0 1px rgba(0,0,0,0.8),inset 0 0 0 1px rgba(255,255,255,0.04),0 60px 120px rgba(0,0,0,0.95),0 20px 40px rgba(0,0,0,0.7);overflow:hidden}
-  .rsa-phone::after{content:'';position:absolute;top:0;left:0;width:45%;height:55%;background:linear-gradient(135deg,rgba(255,255,255,0.04),transparent 60%);border-radius:40px 0 0 0;pointer-events:none}
-  .rsa-phone-cam{position:absolute;top:17px;left:50%;transform:translateX(-50%);width:11px;height:11px;background:#0c0904;border-radius:50%;border:1.5px solid rgba(255,255,255,0.07);z-index:5}
-  .rsa-phone-btn{position:absolute;background:linear-gradient(180deg,#1e1609,#0f0a04);border-radius:2px}
-  .rsa-phone-btn.vol{right:-2px;top:110px;width:3px;height:32px;box-shadow:0 20px 0 rgba(30,22,9,1)}
-  .rsa-phone-btn.vol::after{content:'';position:absolute;top:22px;width:3px;height:32px;background:linear-gradient(180deg,#1e1609,#0f0a04);border-radius:2px}
-  .rsa-phone-btn.pow{left:-2px;top:130px;width:3px;height:48px}
-  .rsa-screen{position:absolute;top:12px;left:9px;right:9px;bottom:12px;border-radius:32px;overflow:hidden;background:#0a0703}
-  .rsa-screen-off{position:absolute;inset:0;background:linear-gradient(135deg,#0d0b08,#070504);z-index:3;border-radius:32px}
-  .rsa-screen-off::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(251,178,60,0.04) 0%,transparent 50%);border-radius:32px}
-  .rsa-screen-on{position:absolute;inset:0;z-index:2;background:#0f0b06;display:flex;flex-direction:column;padding:10px 8px 8px;gap:7px;opacity:0;will-change:opacity}
-  .rsa-tb{display:flex;align-items:center;justify-content:space-between;padding:2px 4px 0}
-  .rsa-tb-logo{display:flex;align-items:center;gap:5px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:-0.01em;color:#f5ede0}
-  .rsa-tb-mark{width:19px;height:19px;background:#fbb23c;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(251,178,60,0.4)}
-  .rsa-tb-mark svg{width:11px;height:11px}
-  .rsa-tb-live{display:flex;align-items:center;gap:3px;font-size:0.55rem;color:#4ade80;font-weight:700;text-transform:uppercase;letter-spacing:0.06em}
-  .rsa-ld{width:5px;height:5px;background:#4ade80;border-radius:50%;animation:pulse 1.5s ease infinite}
-  .rsa-metrics{display:flex;gap:5px}
-  .rsa-metric{flex:1;background:rgba(251,178,60,0.05);border:1px solid rgba(251,178,60,0.09);border-radius:8px;padding:5px 4px;text-align:center}
-  .rsa-metric-n{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.9rem;line-height:1;color:#fbb23c}
-  .rsa-metric-l{font-size:0.46rem;color:rgba(245,237,224,0.32);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-top:2px}
-  .rsa-kanban{display:flex;gap:5px;flex:1;overflow:hidden}
-  .rsa-kcol{flex:1;display:flex;flex-direction:column;gap:4px;min-width:0}
-  .rsa-kcol-hdr{font-size:0.5rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1px;padding:0 3px}
-  .rsa-kcard{background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.06);border-left-width:2px;border-radius:6px;padding:5px 4px;opacity:0;transform:translateY(6px);will-change:opacity,transform}
-  .rsa-kcard.shown{opacity:1;transform:translateY(0);transition:opacity 0.4s ease,transform 0.4s cubic-bezier(0.34,1.56,0.64,1)}
-  .rsa-kcard.k-red{border-left-color:rgba(239,68,68,0.7)}
-  .rsa-kcard.k-blue{border-left-color:rgba(59,130,246,0.8);background:rgba(59,130,246,0.05)}
-  .rsa-kcard.k-green{border-left-color:rgba(34,197,94,0.7)}
-  .rsa-kcard.active-card{position:relative;overflow:hidden}
-  .rsa-kcard.active-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,0.6),transparent);animation:rsaScan 1.8s ease-in-out infinite}
-  .rsa-kcard-addr{font-size:0.51rem;font-weight:600;color:rgba(245,237,224,0.72);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
-  .rsa-kcard-val{font-size:0.44rem;color:rgba(245,237,224,0.33);font-weight:500}
-  .rsa-fbadge{position:absolute;top:50%;display:flex;align-items:center;gap:11px;background:rgba(20,14,5,0.88);border:1px solid rgba(251,178,60,0.18);border-radius:14px;padding:13px 18px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);z-index:25;opacity:0;white-space:nowrap;box-shadow:0 16px 40px rgba(0,0,0,0.6);will-change:opacity,transform}
-  .rsa-fbadge.fb-left{left:clamp(16px,4vw,60px);transform:translateY(calc(-50% + 20px))}
-  .rsa-fbadge.fb-right{right:clamp(16px,4vw,60px);transform:translateY(calc(-50% + 20px))}
-  @media(max-width:900px){.rsa-fbadge{display:none}}
-  .rsa-fbadge-ico{width:38px;height:38px;background:rgba(251,178,60,0.08);border:1px solid rgba(251,178,60,0.18);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-  .rsa-fbadge-ttl{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.8rem;color:#f5ede0;margin-bottom:2px}
-  .rsa-fbadge-sub{font-size:0.7rem;color:rgba(245,237,224,0.38);font-weight:400}
-  .rsa-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);text-align:center;z-index:10;pointer-events:none;will-change:opacity}
-  .rsa-hint-lbl{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,237,224,0.2);margin-bottom:6px}
-  .rsa-hint-arrow{color:rgba(251,178,60,0.35);font-size:1.1rem;animation:rsaBounce 1.5s ease infinite}
-  @keyframes rsaRing{0%{opacity:0.5;transform:translate(-50%,-50%) scale(0.75)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.35)}}
-  @keyframes rsaBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
-  @keyframes rsaScan{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+  .rsa-section { position: relative; height: 480vh; background: var(--bg-dark); }
+  .rsa-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .rsa-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(251,178,60,0.026) 1px, transparent 1px), linear-gradient(90deg, rgba(251,178,60,0.026) 1px, transparent 1px); background-size: 64px 64px; pointer-events: none; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 75%); }
+  .rsa-orb { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(88px); opacity: 0; will-change: opacity, transform; transition: opacity 0.1s; }
+  .rsa-orb.o1 { width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(251,178,60,0.15) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%) scale(0.5); }
+  .rsa-orb.o2 { width: 500px; height: 400px; background: radial-gradient(ellipse, rgba(59,130,246,0.06) 0%, transparent 70%); bottom: 0; right: 5%; }
+  .rsa-orb.o3 { width: 400px; height: 300px; background: radial-gradient(ellipse, rgba(34,197,94,0.05) 0%, transparent 70%); top: 10%; left: 5%; }
+  .rsa-headline { position: absolute; top: clamp(58px, 9vh, 96px); left: 0; right: 0; text-align: center; pointer-events: none; z-index: 10; }
+  .rsa-headline-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(251,178,60,0.09); border: 1px solid rgba(251,178,60,0.2); border-radius: 100px; padding: 5px 16px 5px 10px; font-size: 0.71rem; font-weight: 700; color: #fbb23c; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 13px; }
+  .rsa-bdot { width: 6px; height: 6px; background: #fbb23c; border-radius: 50%; animation: rsaPulse 2s ease infinite; }
+  .rsa-headline h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 3.5vw, 2.85rem); color: #f5ede0; letter-spacing: -0.032em; line-height: 1.08; margin-bottom: 10px; }
+  .rsa-headline p { font-size: clamp(0.84rem, 1.3vw, 0.98rem); color: rgba(245,237,224,0.38); font-weight: 300; line-height: 1.6; }
+  .rsa-disc { position: absolute; top: 50%; left: 50%; width: 88px; height: 88px; border-radius: 50%; background: #fbb23c; display: flex; align-items: center; justify-content: center; z-index: 30; opacity: 0; transform: translate(-50%,-50%) scale(0.15) rotate(0deg); will-change: transform, opacity; }
+  .rsa-disc svg { width: 42px; height: 42px; }
+  .rsa-ring { position: absolute; top: 50%; left: 50%; border-radius: 50%; border: 1px solid rgba(251,178,60,0.2); transform: translate(-50%,-50%) scale(0.7); pointer-events: none; opacity: 0; }
+  .rsa-ring.r1 { width: 128px; height: 128px; animation: rsaRing 2.3s ease-out 0.0s infinite; }
+  .rsa-ring.r2 { width: 185px; height: 185px; animation: rsaRing 2.3s ease-out 0.6s infinite; }
+  .rsa-ring.r3 { width: 250px; height: 250px; animation: rsaRing 2.3s ease-out 1.2s infinite; }
+  .rsa-device { position: absolute; top: 50%; left: 50%; z-index: 20; will-change: transform; transform: translate(-50%, calc(-50% + 110vh)); }
+  .rsa-device.hidden { display: none; }
+  .rsa-phone { position: relative; width: 268px; height: 535px; background: linear-gradient(160deg, #1e1609 0%, #100b04 100%); border-radius: 40px; border: 1.5px solid rgba(251,178,60,0.18); box-shadow: 0 0 0 1px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.04), 0 60px 120px rgba(0,0,0,0.95), 0 20px 40px rgba(0,0,0,0.7); overflow: hidden; }
+  .rsa-phone::after { content:''; position:absolute; top:0; left:0; width:45%; height:55%; background:linear-gradient(135deg,rgba(255,255,255,0.04),transparent 60%); border-radius:40px 0 0 0; pointer-events:none; }
+  .rsa-phone-cam { position:absolute; top:17px; left:50%; transform:translateX(-50%); width:11px; height:11px; background:#0c0904; border-radius:50%; border:1.5px solid rgba(255,255,255,0.07); z-index:5; }
+  .rsa-phone-btn { position:absolute; background:linear-gradient(180deg,#1e1609,#0f0a04); border-radius:2px; }
+  .rsa-phone-btn.vol { right:-2px; top:110px; width:3px; height:32px; }
+  .rsa-phone-btn.vol::after { content:''; position:absolute; top:22px; width:3px; height:32px; background:linear-gradient(180deg,#1e1609,#0f0a04); border-radius:2px; }
+  .rsa-phone-btn.pow { left:-2px; top:130px; width:3px; height:48px; }
+  .rsa-phone-screen { position:absolute; top:12px; left:9px; right:9px; bottom:12px; border-radius:32px; overflow:hidden; background:#0a0703; }
+  .rsa-screen-off { position:absolute; inset:0; background:linear-gradient(135deg,#0d0b08,#070504); z-index:3; }
+  .rsa-screen-off::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(251,178,60,0.04) 0%,transparent 50%); }
+  .rsa-phone-on { position:absolute; inset:0; z-index:2; background:#0f0b06; display:flex; flex-direction:column; padding:10px 8px 8px; gap:7px; opacity:0; will-change:opacity; }
+  .rsa-ptb { display:flex; align-items:center; justify-content:space-between; padding:2px 4px 0; }
+  .rsa-ptb-logo { display:flex; align-items:center; gap:5px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:0.72rem; color:#f5ede0; }
+  .rsa-ptb-mark { width:19px; height:19px; background:#fbb23c; border-radius:5px; display:flex; align-items:center; justify-content:center; }
+  .rsa-ptb-mark svg { width:11px; height:11px; }
+  .rsa-ptb-live { display:flex; align-items:center; gap:3px; font-size:0.55rem; color:#4ade80; font-weight:700; text-transform:uppercase; }
+  .rsa-ld { width:5px; height:5px; background:#4ade80; border-radius:50%; animation:rsaPulse 1.5s ease infinite; }
+  .rsa-pmetrics { display:flex; gap:5px; }
+  .rsa-pmet { flex:1; background:rgba(251,178,60,0.05); border:1px solid rgba(251,178,60,0.09); border-radius:8px; padding:5px 4px; text-align:center; }
+  .rsa-pmet-n { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:0.9rem; line-height:1; color:#fbb23c; }
+  .rsa-pmet-l { font-size:0.46rem; color:rgba(245,237,224,0.32); font-weight:700; text-transform:uppercase; margin-top:2px; }
+  .rsa-pkanban { display:flex; gap:5px; flex:1; overflow:hidden; }
+  .rsa-pkcol { flex:1; display:flex; flex-direction:column; gap:4px; min-width:0; }
+  .rsa-pkcol-hdr { font-size:0.5rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1px; padding:0 3px; }
+  .rsa-pkcard { background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.06); border-left-width:2px; border-radius:6px; padding:5px 4px; opacity:0; transform:translateY(6px); will-change:opacity,transform; }
+  .rsa-pkcard.shown { opacity:1; transform:translateY(0); transition:opacity .4s ease,transform .4s cubic-bezier(.34,1.56,.64,1); }
+  .rsa-pkcard.k-r { border-left-color:rgba(239,68,68,.7); }
+  .rsa-pkcard.k-b { border-left-color:rgba(59,130,246,.8); background:rgba(59,130,246,.05); }
+  .rsa-pkcard.k-g { border-left-color:rgba(34,197,94,.7); }
+  .rsa-pkcard.active-card { position:relative; overflow:hidden; }
+  .rsa-pkcard.active-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(59,130,246,.6),transparent); animation:rsaScan 1.8s ease-in-out infinite; }
+  .rsa-pkcard-addr { font-size:.51rem; font-weight:600; color:rgba(245,237,224,.72); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:2px; }
+  .rsa-pkcard-val { font-size:.44rem; color:rgba(245,237,224,.33); font-weight:500; }
+  .rsa-laptop { position:relative; width:clamp(520px,60vw,800px); }
+  .rsa-lid { position:relative; width:100%; padding-bottom:62.5%; background:linear-gradient(160deg,#1a1208 0%,#0d0904 100%); border-radius:clamp(10px,1.4vw,17px) clamp(10px,1.4vw,17px) 0 0; border:1.5px solid rgba(251,178,60,0.2); border-bottom:none; box-shadow:0 0 0 1px rgba(0,0,0,.9),inset 0 0 0 1px rgba(255,255,255,.04),0 -6px 32px rgba(0,0,0,.65); overflow:hidden; }
+  .rsa-lid::after { content:''; position:absolute; top:0; left:0; width:40%; height:50%; background:linear-gradient(135deg,rgba(255,255,255,.04),transparent 60%); border-radius:clamp(10px,1.4vw,17px) 0 0 0; pointer-events:none; z-index:4; }
+  .rsa-lcam { position:absolute; top:7px; left:50%; transform:translateX(-50%); width:8px; height:8px; background:#0a0703; border-radius:50%; border:1px solid rgba(255,255,255,.06); z-index:5; }
+  .rsa-lid-logo { position:absolute; top:50%; left:50%; transform:translate(-50%,-55%); width:clamp(26px,3.8vw,46px); height:clamp(26px,3.8vw,46px); display:flex; align-items:center; justify-content:center; z-index:3; will-change:opacity; }
+  .rsa-lid-logo svg { width:100%; height:100%; opacity:0.28; }
+  .rsa-lscreen { position:absolute; inset:clamp(6px,.9vw,11px); border-radius:clamp(6px,.9vw,9px); overflow:hidden; background:#060402; z-index:2; }
+  .rsa-lscreen-off { position:absolute; inset:0; background:linear-gradient(140deg,#0e0b07,#060402); z-index:3; }
+  .rsa-lscreen-off::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(251,178,60,.03) 0%,transparent 45%); }
+  .rsa-lscreen-on { position:absolute; inset:0; background:#0f0b06; display:flex; flex-direction:column; z-index:2; opacity:0; will-change:opacity; overflow:hidden; }
+  .rsa-ltb { display:flex; align-items:center; justify-content:space-between; padding:clamp(5px,.9vw,11px) clamp(9px,1.4vw,18px); background:rgba(24,18,8,.9); border-bottom:1px solid rgba(251,178,60,.09); flex-shrink:0; }
+  .rsa-ltb-l { display:flex; align-items:center; gap:clamp(5px,.8vw,11px); }
+  .rsa-ltb-logo { display:flex; align-items:center; gap:clamp(4px,.6vw,7px); }
+  .rsa-ltb-mark { width:clamp(17px,2.4vw,27px); height:clamp(17px,2.4vw,27px); background:#fbb23c; border-radius:clamp(4px,.6vw,7px); display:flex; align-items:center; justify-content:center; }
+  .rsa-ltb-mark svg { width:60%; height:60%; }
+  .rsa-ltb-name { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:clamp(.54rem,.88vw,.84rem); color:#f5ede0; }
+  .rsa-ltb-sep { width:1px; height:clamp(11px,1.7vw,19px); background:rgba(251,178,60,.14); }
+  .rsa-ltb-ttl { font-size:clamp(.48rem,.72vw,.7rem); color:rgba(245,237,224,.38); font-weight:500; }
+  .rsa-ltb-r { display:flex; align-items:center; gap:clamp(4px,.6vw,9px); }
+  .rsa-ltb-live { display:flex; align-items:center; gap:clamp(3px,.4vw,5px); background:rgba(34,197,94,.07); border:1px solid rgba(34,197,94,.17); border-radius:100px; padding:clamp(2px,.3vw,3px) clamp(5px,.7vw,9px); font-size:clamp(.43rem,.63vw,.59rem); color:#4ade80; font-weight:700; text-transform:uppercase; letter-spacing:.06em; }
+  .rsa-lld { width:clamp(4px,.5vw,6px); height:clamp(4px,.5vw,6px); background:#4ade80; border-radius:50%; animation:rsaPulse 1.5s ease infinite; }
+  .rsa-ltb-av { width:clamp(15px,2.1vw,25px); height:clamp(15px,2.1vw,25px); border-radius:50%; background:linear-gradient(135deg,rgba(251,178,60,.4),rgba(251,100,30,.3)); border:1px solid rgba(251,178,60,.24); display:flex; align-items:center; justify-content:center; font-size:clamp(.42rem,.62vw,.58rem); font-weight:700; color:#0f0b06; }
+  .rsa-lbody { flex:1; display:flex; overflow:hidden; }
+  .rsa-lsidebar { width:clamp(30px,4.8vw,62px); background:rgba(14,11,6,.8); border-right:1px solid rgba(251,178,60,.07); display:flex; flex-direction:column; align-items:center; padding:clamp(6px,.9vw,11px) 0; gap:clamp(4px,.6vw,9px); flex-shrink:0; }
+  .rsa-lsb-i { width:clamp(18px,2.8vw,34px); height:clamp(18px,2.8vw,34px); border-radius:clamp(4px,.55vw,7px); display:flex; align-items:center; justify-content:center; }
+  .rsa-lsb-i.act { background:rgba(251,178,60,.09); border:1px solid rgba(251,178,60,.16); }
+  .rsa-lsb-d { width:clamp(5px,.65vw,8px); height:clamp(5px,.65vw,8px); border-radius:2px; background:rgba(251,178,60,.22); }
+  .rsa-lsb-i.act .rsa-lsb-d { background:#fbb23c; }
+  .rsa-lmain { flex:1; display:flex; flex-direction:column; padding:clamp(7px,1.1vw,14px); gap:clamp(5px,.9vw,11px); overflow:hidden; }
+  .rsa-lmetrics { display:flex; gap:clamp(5px,.75vw,9px); flex-shrink:0; }
+  .rsa-lmet { flex:1; background:rgba(251,178,60,.04); border:1px solid rgba(251,178,60,.07); border-radius:clamp(5px,.75vw,9px); padding:clamp(4px,.7vw,9px) clamp(6px,.9vw,13px); }
+  .rsa-lmet-n { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:clamp(.72rem,1.3vw,1.35rem); line-height:1; }
+  .rsa-lmet-l { font-size:clamp(.37rem,.52vw,.53rem); color:rgba(245,237,224,.28); font-weight:600; text-transform:uppercase; margin-top:clamp(2px,.28vw,3px); }
+  .rsa-lkanban { display:flex; gap:clamp(5px,.75vw,9px); flex:1; overflow:hidden; }
+  .rsa-lcol { flex:1; display:flex; flex-direction:column; gap:clamp(3px,.55vw,6px); min-width:0; overflow:hidden; }
+  .rsa-lcol-hdr { display:flex; align-items:center; gap:clamp(3px,.48vw,6px); margin-bottom:clamp(1px,.18vw,2px); flex-shrink:0; }
+  .rsa-lcol-dot { width:clamp(4px,.55vw,7px); height:clamp(4px,.55vw,7px); border-radius:50%; flex-shrink:0; }
+  .rsa-lcol-name { font-size:clamp(.41rem,.58vw,.58rem); font-weight:700; text-transform:uppercase; letter-spacing:.07em; white-space:nowrap; }
+  .rsa-lcol-cnt { font-size:clamp(.37rem,.5vw,.5rem); color:rgba(245,237,224,.28); margin-left:auto; font-weight:600; }
+  .rsa-lcard { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); border-left-width:clamp(2px,.22vw,3px); border-radius:clamp(4px,.55vw,7px); padding:clamp(4px,.68vw,8px) clamp(5px,.82vw,10px); opacity:0; transform:translateY(8px); will-change:opacity,transform; flex-shrink:0; }
+  .rsa-lcard.shown { opacity:1; transform:translateY(0); transition:opacity .45s ease,transform .45s cubic-bezier(.34,1.56,.64,1); }
+  .rsa-lcard.c-r { border-left-color:rgba(239,68,68,.7); }
+  .rsa-lcard.c-b { border-left-color:rgba(59,130,246,.8); background:rgba(59,130,246,.04); }
+  .rsa-lcard.c-g { border-left-color:rgba(34,197,94,.65); }
+  .rsa-lcard.c-y { border-left-color:rgba(251,178,60,.7); background:rgba(251,178,60,.03); }
+  .rsa-lcard.active-card { position:relative; overflow:hidden; }
+  .rsa-lcard.active-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(59,130,246,.7),transparent); animation:rsaScan 2s ease-in-out infinite; }
+  .rsa-lcard-top { display:flex; align-items:flex-start; justify-content:space-between; gap:3px; margin-bottom:clamp(2px,.28vw,3px); }
+  .rsa-lcard-name { font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(.44rem,.66vw,.66rem); font-weight:700; color:rgba(245,237,224,.85); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .rsa-lcard-tag { font-size:clamp(.35rem,.46vw,.46rem); background:rgba(251,178,60,.1); color:rgba(251,178,60,.7); border-radius:3px; padding:1px 4px; font-weight:700; white-space:nowrap; }
+  .rsa-lcard-meta { font-size:clamp(.34rem,.48vw,.48rem); color:rgba(245,237,224,.26); font-weight:500; }
+  .rsa-lside { width:clamp(75px,13vw,160px); background:rgba(12,9,4,.6); border-left:1px solid rgba(251,178,60,.07); padding:clamp(7px,1.1vw,13px); display:flex; flex-direction:column; gap:clamp(7px,1.1vw,13px); flex-shrink:0; }
+  .rsa-lpanel-lbl { font-size:clamp(.36rem,.5vw,.5rem); font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:rgba(245,237,224,.22); margin-bottom:clamp(3px,.4vw,5px); }
+  .rsa-lbar-row { display:flex; align-items:center; gap:clamp(3px,.45vw,6px); margin-bottom:clamp(2px,.28vw,3px); }
+  .rsa-lbar-lbl { font-size:clamp(.34rem,.46vw,.46rem); color:rgba(245,237,224,.28); font-weight:600; width:clamp(13px,1.9vw,22px); text-align:right; flex-shrink:0; }
+  .rsa-lbar-track { flex:1; height:clamp(3px,.42vw,5px); background:rgba(255,255,255,.04); border-radius:2px; overflow:hidden; }
+  .rsa-lbar-fill { height:100%; border-radius:2px; background:linear-gradient(90deg,#fbb23c,rgba(251,178,60,.32)); }
+  .rsa-lpie { display:flex; align-items:center; gap:clamp(4px,.7vw,9px); }
+  .rsa-lpie-ring { width:clamp(26px,4.2vw,50px); height:clamp(26px,4.2vw,50px); flex-shrink:0; }
+  .rsa-lpie-ring circle { fill:none; stroke-width:clamp(3px,.48vw,5px); stroke-linecap:round; }
+  .rsa-lpie-legend { flex:1; display:flex; flex-direction:column; gap:clamp(2px,.28vw,3px); }
+  .rsa-lpie-li { display:flex; align-items:center; gap:clamp(3px,.38vw,5px); }
+  .rsa-lpie-d { width:clamp(4px,.52vw,6px); height:clamp(4px,.52vw,6px); border-radius:50%; flex-shrink:0; }
+  .rsa-lpie-t { font-size:clamp(.34rem,.46vw,.46rem); color:rgba(245,237,224,.42); font-weight:600; }
+  .rsa-hinge { height:clamp(3px,.38vw,5px); background:linear-gradient(90deg,transparent 5%,rgba(251,178,60,.11) 30%,rgba(251,178,60,.17) 50%,rgba(251,178,60,.11) 70%,transparent 95%); }
+  .rsa-base { position:relative; width:100%; height:clamp(13px,2vw,26px); background:linear-gradient(180deg,#1c1409 0%,#0e0904 100%); border-radius:0 0 clamp(7px,1.1vw,15px) clamp(7px,1.1vw,15px); border:1.5px solid rgba(251,178,60,.17); border-top:1px solid rgba(251,178,60,.07); box-shadow:0 12px 48px rgba(0,0,0,.9),0 4px 12px rgba(0,0,0,.6); }
+  .rsa-base::after { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:clamp(48px,8.5vw,105px); height:clamp(5px,.85vw,9px); background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); border-radius:clamp(2px,.38vw,4px); }
+  .rsa-shadow { position:absolute; bottom:clamp(-16px,-2.8vw,-34px); left:5%; right:5%; height:clamp(18px,2.8vw,38px); background:radial-gradient(ellipse,rgba(0,0,0,.5) 0%,transparent 70%); filter:blur(clamp(7px,1.1vw,17px)); pointer-events:none; }
+  .rsa-fbadge { position:absolute; top:50%; display:flex; align-items:center; gap:11px; background:rgba(18,12,4,.9); border:1px solid rgba(251,178,60,.17); border-radius:14px; padding:12px 18px; backdrop-filter:blur(16px); z-index:25; opacity:0; white-space:nowrap; box-shadow:0 16px 40px rgba(0,0,0,.6); will-change:opacity,transform; }
+  .rsa-fbadge.fb-l { left:clamp(12px,2.8vw,48px); transform:translateY(calc(-50% + 20px)); }
+  .rsa-fbadge.fb-r { right:clamp(12px,2.8vw,48px); transform:translateY(calc(-50% + 20px)); }
+  @media(max-width:860px){ .rsa-fbadge{display:none} }
+  .rsa-fbadge-ico { width:38px; height:38px; background:rgba(251,178,60,.08); border:1px solid rgba(251,178,60,.17); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; }
+  .rsa-fbadge-ttl { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:.8rem; color:#f5ede0; margin-bottom:2px; }
+  .rsa-fbadge-sub { font-size:.7rem; color:rgba(245,237,224,.36); }
+  .rsa-hint { position:absolute; bottom:30px; left:50%; transform:translateX(-50%); text-align:center; z-index:10; pointer-events:none; }
+  .rsa-hint-lbl { font-size:.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(245,237,224,.18); margin-bottom:5px; }
+  .rsa-hint-arr { color:rgba(251,178,60,.3); font-size:1rem; animation:rsaBounce 1.5s ease infinite; }
+  @keyframes rsaPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.35;transform:scale(.65)} }
+  @keyframes rsaRing { 0%{opacity:.42;transform:translate(-50%,-50%) scale(.72)} 100%{opacity:0;transform:translate(-50%,-50%) scale(1.42)} }
+  @keyframes rsaBounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+  @keyframes rsaScan { 0%{transform:translateX(-100%)} 100%{transform:translateX(100%)} }
+  @keyframes rsaFadeUp { from{opacity:0;transform:translateX(-50%) translateY(12px)} to{opacity:1;transform:translateX(-50%) translateY(0)} }
 </style>
 </head>
 <body>
@@ -529,6 +600,13 @@
     <line x1="2" y1="14" x2="9" y2="14" stroke="#0f0b06" stroke-width="2.2" stroke-linecap="round"/>
     <line x1="11" y1="11" x2="20" y2="11" stroke="#0f0b06" stroke-width="2.2" stroke-linecap="round"/>
     <polyline points="15.5,6.5 20.5,11 15.5,15.5" fill="none" stroke="#0f0b06" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="rotax-icon-amber" viewBox="0 0 22 22">
+    <line x1="2" y1="8" x2="9" y2="8" stroke="#fbb23c" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="2" y1="11" x2="7" y2="11" stroke="#fbb23c" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="2" y1="14" x2="9" y2="14" stroke="#fbb23c" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="11" y1="11" x2="20" y2="11" stroke="#fbb23c" stroke-width="2.2" stroke-linecap="round"/>
+    <polyline points="15.5,6.5 20.5,11 15.5,15.5" fill="none" stroke="#fbb23c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
 </svg>
 
@@ -585,99 +663,191 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════
-       SEÇÃO DE ANIMAÇÃO POR SCROLL — ESTILO CHROMEOS FLEX
-  ═══════════════════════════════════════════════════════ -->
   <section id="rsa-section" class="rsa-section">
     <div id="rsa-sticky" class="rsa-sticky">
+
       <div class="rsa-grid"></div>
-      <div class="rsa-splash s1" id="rsa-s1"></div>
-      <div class="rsa-splash s2" id="rsa-s2"></div>
-      <div class="rsa-glow" id="rsa-glow"></div>
+      <div class="rsa-orb o1" id="rsa-o1"></div>
+      <div class="rsa-orb o2" id="rsa-o2"></div>
+      <div class="rsa-orb o3" id="rsa-o3"></div>
+
+      <div class="rsa-headline" id="rsa-headline">
+        <div class="rsa-headline-badge" id="rsa-badge-txt">
+          <div class="rsa-bdot"></div>
+          <span id="rsa-badge-label">Painel Inteligente</span>
+        </div>
+        <h2 id="rsa-headline-h2">Controle total das<br/>suas entregas</h2>
+        <p id="rsa-headline-p">Tudo em tempo real, na palma da mão da sua equipe.</p>
+      </div>
+
+      <div class="rsa-disc" id="rsa-disc">
+        <svg viewBox="0 0 22 22" fill="none"><use href="#rotax-icon"/></svg>
+      </div>
       <div class="rsa-ring r1"></div>
       <div class="rsa-ring r2"></div>
       <div class="rsa-ring r3"></div>
-      <div class="rsa-headline" id="rsa-headline">
-        <div class="rsa-headline-badge"><div class="rsa-badge-pulse"></div>Painel Inteligente</div>
-        <h2>Controle total das<br/>suas entregas</h2>
-        <p>Tudo em tempo real, na palma da mão da sua equipe.</p>
-      </div>
-      <div class="rsa-disc" id="rsa-disc">
-        <svg viewBox="0 0 22 22" fill="none">
-          <line x1="2" y1="8" x2="9" y2="8" stroke="#0f0b06" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="2" y1="11" x2="7" y2="11" stroke="#0f0b06" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="2" y1="14" x2="9" y2="14" stroke="#0f0b06" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="11" y1="11" x2="20" y2="11" stroke="#0f0b06" stroke-width="2.2" stroke-linecap="round"/>
-          <polyline points="15.5,6.5 20.5,11 15.5,15.5" fill="none" stroke="#0f0b06" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="rsa-device" id="rsa-device">
+
+      <div class="rsa-device" id="dev-mobile">
         <div class="rsa-phone">
           <div class="rsa-phone-cam"></div>
           <div class="rsa-phone-btn vol"></div>
           <div class="rsa-phone-btn pow"></div>
-          <div class="rsa-screen">
-            <div class="rsa-screen-off" id="rsa-screen-off"></div>
-            <div class="rsa-screen-on" id="rsa-screen-on">
-              <div class="rsa-tb">
-                <div class="rsa-tb-logo">
-                  <div class="rsa-tb-mark">
-                    <svg viewBox="0 0 22 22" fill="none">
-                      <line x1="2" y1="8" x2="9" y2="8" stroke="#0f0b06" stroke-width="2" stroke-linecap="round"/>
-                      <line x1="2" y1="11" x2="7" y2="11" stroke="#0f0b06" stroke-width="2" stroke-linecap="round"/>
-                      <line x1="2" y1="14" x2="9" y2="14" stroke="#0f0b06" stroke-width="2" stroke-linecap="round"/>
-                      <line x1="11" y1="11" x2="20" y2="11" stroke="#0f0b06" stroke-width="2" stroke-linecap="round"/>
-                      <polyline points="15.5,6.5 20.5,11 15.5,15.5" fill="none" stroke="#0f0b06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </div>
+          <div class="rsa-phone-screen">
+            <div class="rsa-screen-off" id="rsa-soff-m"></div>
+            <div class="rsa-phone-on" id="rsa-son-m">
+              <div class="rsa-ptb">
+                <div class="rsa-ptb-logo">
+                  <div class="rsa-ptb-mark"><svg viewBox="0 0 22 22" fill="none"><use href="#rotax-icon"/></svg></div>
                   Rotax
                 </div>
-                <div class="rsa-tb-live"><div class="rsa-ld"></div>Ao vivo</div>
+                <div class="rsa-ptb-live"><div class="rsa-ld"></div>Ao vivo</div>
               </div>
-              <div class="rsa-metrics">
-                <div class="rsa-metric"><div class="rsa-metric-n">12</div><div class="rsa-metric-l">Em Rota</div></div>
-                <div class="rsa-metric"><div class="rsa-metric-n" style="color:#4ade80">87</div><div class="rsa-metric-l">Entregues</div></div>
-                <div class="rsa-metric"><div class="rsa-metric-n" style="color:rgba(245,237,224,0.4)">4</div><div class="rsa-metric-l">Pendentes</div></div>
+              <div class="rsa-pmetrics">
+                <div class="rsa-pmet"><div class="rsa-pmet-n">12</div><div class="rsa-pmet-l">Em Rota</div></div>
+                <div class="rsa-pmet"><div class="rsa-pmet-n" style="color:#4ade80">87</div><div class="rsa-pmet-l">Entregues</div></div>
+                <div class="rsa-pmet"><div class="rsa-pmet-n" style="color:rgba(245,237,224,.4)">4</div><div class="rsa-pmet-l">Pendentes</div></div>
               </div>
-              <div class="rsa-kanban">
-                <div class="rsa-kcol">
-                  <div class="rsa-kcol-hdr" style="color:#ef4444">Pendente</div>
-                  <div class="rsa-kcard k-red" data-d="0"><div class="rsa-kcard-addr">Av. Epitácio</div><div class="rsa-kcard-val">R$45 · Pix</div></div>
-                  <div class="rsa-kcard k-red" data-d="80"><div class="rsa-kcard-addr">Rua das Flores</div><div class="rsa-kcard-val">R$78 · Dinheiro</div></div>
-                  <div class="rsa-kcard k-red" data-d="160"><div class="rsa-kcard-addr">Centro</div><div class="rsa-kcard-val">R$32 · Cartão</div></div>
+              <div class="rsa-pkanban">
+                <div class="rsa-pkcol">
+                  <div class="rsa-pkcol-hdr" style="color:#ef4444">Pendente</div>
+                  <div class="rsa-pkcard k-r" data-d="0"><div class="rsa-pkcard-addr">Av. Epitácio</div><div class="rsa-pkcard-val">R$45 · Pix</div></div>
+                  <div class="rsa-pkcard k-r" data-d="80"><div class="rsa-pkcard-addr">Rua das Flores</div><div class="rsa-pkcard-val">R$78 · Dinheiro</div></div>
+                  <div class="rsa-pkcard k-r" data-d="160"><div class="rsa-pkcard-addr">Centro</div><div class="rsa-pkcard-val">R$32 · Cartão</div></div>
                 </div>
-                <div class="rsa-kcol">
-                  <div class="rsa-kcol-hdr" style="color:#3b82f6">Em Rota</div>
-                  <div class="rsa-kcard k-blue active-card" data-d="40"><div class="rsa-kcard-addr">B. Estados</div><div class="rsa-kcard-val">R$32 · Cartão</div></div>
-                  <div class="rsa-kcard k-blue" data-d="200"><div class="rsa-kcard-addr">Miramar</div><div class="rsa-kcard-val">R$56 · Pix</div></div>
+                <div class="rsa-pkcol">
+                  <div class="rsa-pkcol-hdr" style="color:#3b82f6">Em Rota</div>
+                  <div class="rsa-pkcard k-b active-card" data-d="40"><div class="rsa-pkcard-addr">B. Estados</div><div class="rsa-pkcard-val">R$32 · Cart</div></div>
+                  <div class="rsa-pkcard k-b" data-d="200"><div class="rsa-pkcard-addr">Miramar</div><div class="rsa-pkcard-val">R$56 · Pix</div></div>
                 </div>
-                <div class="rsa-kcol">
-                  <div class="rsa-kcol-hdr" style="color:#22c55e">Concluída</div>
-                  <div class="rsa-kcard k-green" data-d="60"><div class="rsa-kcard-addr">Manaíra</div><div class="rsa-kcard-val">R$120 · Pix</div></div>
-                  <div class="rsa-kcard k-green" data-d="140"><div class="rsa-kcard-addr">Tambaú</div><div class="rsa-kcard-val">R$55 · Dinheiro</div></div>
-                  <div class="rsa-kcard k-green" data-d="220"><div class="rsa-kcard-addr">Altiplano</div><div class="rsa-kcard-val">R$89 · Pix</div></div>
+                <div class="rsa-pkcol">
+                  <div class="rsa-pkcol-hdr" style="color:#22c55e">Concluída</div>
+                  <div class="rsa-pkcard k-g" data-d="60"><div class="rsa-pkcard-addr">Manaíra</div><div class="rsa-pkcard-val">R$120 · Pix</div></div>
+                  <div class="rsa-pkcard k-g" data-d="140"><div class="rsa-pkcard-addr">Tambaú</div><div class="rsa-pkcard-val">R$55 · Din</div></div>
+                  <div class="rsa-pkcard k-g" data-d="220"><div class="rsa-pkcard-addr">Altiplano</div><div class="rsa-pkcard-val">R$89 · Pix</div></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="rsa-fbadge fb-left" id="rsa-bl">
+
+      <div class="rsa-device hidden" id="dev-desktop">
+        <div class="rsa-laptop">
+          <div class="rsa-lid">
+            <div class="rsa-lcam"></div>
+            <div class="rsa-lid-logo" id="rsa-lid-logo">
+              <svg viewBox="0 0 22 22" fill="none"><use href="#rotax-icon-amber"/></svg>
+            </div>
+            <div class="rsa-lscreen">
+              <div class="rsa-lscreen-off" id="rsa-soff-d"></div>
+              <div class="rsa-lscreen-on" id="rsa-son-d">
+                <div class="rsa-ltb">
+                  <div class="rsa-ltb-l">
+                    <div class="rsa-ltb-logo">
+                      <div class="rsa-ltb-mark"><svg viewBox="0 0 22 22" fill="none"><use href="#rotax-icon"/></svg></div>
+                      <div class="rsa-ltb-name">Rotax</div>
+                    </div>
+                    <div class="rsa-ltb-sep"></div>
+                    <div class="rsa-ltb-ttl">Painel de Entregas</div>
+                  </div>
+                  <div class="rsa-ltb-r">
+                    <div class="rsa-ltb-live"><div class="rsa-lld"></div>Ao vivo</div>
+                    <div class="rsa-ltb-av">JS</div>
+                  </div>
+                </div>
+                <div class="rsa-lbody">
+                  <div class="rsa-lsidebar">
+                    <div class="rsa-lsb-i act"><div class="rsa-lsb-d"></div></div>
+                    <div class="rsa-lsb-i"><div class="rsa-lsb-d"></div></div>
+                    <div class="rsa-lsb-i"><div class="rsa-lsb-d"></div></div>
+                    <div class="rsa-lsb-i"><div class="rsa-lsb-d"></div></div>
+                  </div>
+                  <div class="rsa-lmain">
+                    <div class="rsa-lmetrics">
+                      <div class="rsa-lmet"><div class="rsa-lmet-n" style="color:#fbb23c">24</div><div class="rsa-lmet-l">Em Rota</div></div>
+                      <div class="rsa-lmet"><div class="rsa-lmet-n" style="color:#4ade80">148</div><div class="rsa-lmet-l">Concluídas</div></div>
+                      <div class="rsa-lmet"><div class="rsa-lmet-n" style="color:rgba(245,237,224,.42)">6</div><div class="rsa-lmet-l">Pendentes</div></div>
+                      <div class="rsa-lmet"><div class="rsa-lmet-n" style="color:#fbb23c">R$3.2k</div><div class="rsa-lmet-l">Faturado</div></div>
+                    </div>
+                    <div class="rsa-lkanban">
+                      <div class="rsa-lcol">
+                        <div class="rsa-lcol-hdr"><div class="rsa-lcol-dot" style="background:#ef4444"></div><span class="rsa-lcol-name" style="color:rgba(239,68,68,.8)">Pendente</span><span class="rsa-lcol-cnt">3</span></div>
+                        <div class="rsa-lcard c-r" data-d="0"><div class="rsa-lcard-top"><span class="rsa-lcard-name">Av. Epitácio P.</span><span class="rsa-lcard-tag">Pix</span></div><div class="rsa-lcard-meta">R$45 · Motoboy A</div></div>
+                        <div class="rsa-lcard c-r" data-d="90"><div class="rsa-lcard-top"><span class="rsa-lcard-name">Rua das Flores</span><span class="rsa-lcard-tag">Din</span></div><div class="rsa-lcard-meta">R$78 · Motoboy B</div></div>
+                        <div class="rsa-lcard c-r" data-d="180"><div class="rsa-lcard-top"><span class="rsa-lcard-name">Centro</span><span class="rsa-lcard-tag">Cart</span></div><div class="rsa-lcard-meta">R$32 · Motoboy A</div></div>
+                      </div>
+                      <div class="rsa-lcol">
+                        <div class="rsa-lcol-hdr"><div class="rsa-lcol-dot" style="background:#fbb23c"></div><span class="rsa-lcol-name" style="color:rgba(251,178,60,.8)">Coletando</span><span class="rsa-lcol-cnt">2</span></div>
+                        <div class="rsa-lcard c-y" data-d="50"><div class="rsa-lcard-top"><span class="rsa-lcard-name">B. dos Estados</span><span class="rsa-lcard-tag">Pix</span></div><div class="rsa-lcard-meta">R$56 · Motoboy C</div></div>
+                        <div class="rsa-lcard c-y" data-d="210"><div class="rsa-lcard-top"><span class="rsa-lcard-name">Miramar</span><span class="rsa-lcard-tag">Din</span></div><div class="rsa-lcard-meta">R$42 · Motoboy B</div></div>
+                      </div>
+                      <div class="rsa-lcol">
+                        <div class="rsa-lcol-hdr"><div class="rsa-lcol-dot" style="background:#3b82f6"></div><span class="rsa-lcol-name" style="color:rgba(59,130,246,.85)">Em Rota</span><span class="rsa-lcol-cnt">2</span></div>
+                        <div class="rsa-lcard c-b active-card" data-d="30"><div class="rsa-lcard-top"><span class="rsa-lcard-name">Tambaú</span><span class="rsa-lcard-tag">GPS</span></div><div class="rsa-lcard-meta">R$89 · 1.2km</div></div>
+                        <div class="rsa-lcard c-b" data-d="160"><div class="rsa-lcard-top"><span class="rsa-lcard-name">Manaíra</span><span class="rsa-lcard-tag">GPS</span></div><div class="rsa-lcard-meta">R$120 · 3.4km</div></div>
+                      </div>
+                      <div class="rsa-lcol">
+                        <div class="rsa-lcol-hdr"><div class="rsa-lcol-dot" style="background:#22c55e"></div><span class="rsa-lcol-name" style="color:rgba(34,197,94,.8)">Concluída</span><span class="rsa-lcol-cnt">4</span></div>
+                        <div class="rsa-lcard c-g" data-d="70"><div class="rsa-lcard-top"><span class="rsa-lcard-name">Altiplano</span><span class="rsa-lcard-tag">✓</span></div><div class="rsa-lcard-meta">R$65 · 14:32</div></div>
+                        <div class="rsa-lcard c-g" data-d="140"><div class="rsa-lcard-top"><span class="rsa-lcard-name">Bancários</span><span class="rsa-lcard-tag">✓</span></div><div class="rsa-lcard-meta">R$38 · 14:18</div></div>
+                        <div class="rsa-lcard c-g" data-d="220"><div class="rsa-lcard-top"><span class="rsa-lcard-name">Água Fria</span><span class="rsa-lcard-tag">✓</span></div><div class="rsa-lcard-meta">R$54 · 13:55</div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rsa-lside">
+                    <div>
+                      <div class="rsa-lpanel-lbl">Semana</div>
+                      <div class="rsa-lbar-row"><div class="rsa-lbar-lbl">Seg</div><div class="rsa-lbar-track"><div class="rsa-lbar-fill" style="width:72%"></div></div></div>
+                      <div class="rsa-lbar-row"><div class="rsa-lbar-lbl">Ter</div><div class="rsa-lbar-track"><div class="rsa-lbar-fill" style="width:90%"></div></div></div>
+                      <div class="rsa-lbar-row"><div class="rsa-lbar-lbl">Qua</div><div class="rsa-lbar-track"><div class="rsa-lbar-fill" style="width:55%"></div></div></div>
+                      <div class="rsa-lbar-row"><div class="rsa-lbar-lbl">Qui</div><div class="rsa-lbar-track"><div class="rsa-lbar-fill" style="width:83%"></div></div></div>
+                      <div class="rsa-lbar-row"><div class="rsa-lbar-lbl">Sex</div><div class="rsa-lbar-track"><div class="rsa-lbar-fill" style="width:67%"></div></div></div>
+                    </div>
+                    <div>
+                      <div class="rsa-lpanel-lbl">Status</div>
+                      <div class="rsa-lpie">
+                        <svg class="rsa-lpie-ring" viewBox="0 0 36 36">
+                          <circle cx="18" cy="18" r="14" stroke="rgba(255,255,255,0.05)" stroke-dasharray="88 0"/>
+                          <circle cx="18" cy="18" r="14" stroke="#4ade80" stroke-dasharray="53 35" stroke-dashoffset="22" transform="rotate(-90 18 18)"/>
+                          <circle cx="18" cy="18" r="14" stroke="#3b82f6" stroke-dasharray="15 73" stroke-dashoffset="-31" transform="rotate(-90 18 18)"/>
+                          <circle cx="18" cy="18" r="14" stroke="#ef4444" stroke-dasharray="10 78" stroke-dashoffset="-46" transform="rotate(-90 18 18)"/>
+                          <circle cx="18" cy="18" r="14" stroke="#fbb23c" stroke-dasharray="10 78" stroke-dashoffset="-56" transform="rotate(-90 18 18)"/>
+                        </svg>
+                        <div class="rsa-lpie-legend">
+                          <div class="rsa-lpie-li"><div class="rsa-lpie-d" style="background:#4ade80"></div><span class="rsa-lpie-t">60% Feitas</span></div>
+                          <div class="rsa-lpie-li"><div class="rsa-lpie-d" style="background:#3b82f6"></div><span class="rsa-lpie-t">17% Rota</span></div>
+                          <div class="rsa-lpie-li"><div class="rsa-lpie-d" style="background:#ef4444"></div><span class="rsa-lpie-t">12% Pend.</span></div>
+                          <div class="rsa-lpie-li"><div class="rsa-lpie-d" style="background:#fbb23c"></div><span class="rsa-lpie-t">11% Col.</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rsa-hinge"></div>
+          <div class="rsa-base"></div>
+          <div class="rsa-shadow"></div>
+        </div>
+      </div>
+
+      <div class="rsa-fbadge fb-l" id="rsa-bl">
         <div class="rsa-fbadge-ico">📍</div>
         <div><div class="rsa-fbadge-ttl">GPS em Tempo Real</div><div class="rsa-fbadge-sub">Rastreie cada entregador</div></div>
       </div>
-      <div class="rsa-fbadge fb-right" id="rsa-br">
+      <div class="rsa-fbadge fb-r" id="rsa-br">
         <div class="rsa-fbadge-ico">💬</div>
         <div><div class="rsa-fbadge-ttl">WhatsApp Automático</div><div class="rsa-fbadge-sub">Cliente sempre informado</div></div>
       </div>
+
       <div class="rsa-hint" id="rsa-hint">
         <div class="rsa-hint-lbl">Role para descobrir</div>
-        <div class="rsa-hint-arrow">↓</div>
+        <div class="rsa-hint-arr">↓</div>
       </div>
+
     </div>
   </section>
-  <!-- ═══════════════════════════════════════════════════════ -->
-
   <div id="modulos">
     <div class="section">
       <div class="reveal"><div class="section-label">Arquitetura Modular</div></div>
@@ -1182,82 +1352,130 @@
   render(projects);
 
   /* ═══════════════════════════════════════════════════════════════
-     ROTAX SCROLL ANIMATION — JS ENGINE
+     ROTAX SCROLL ANIMATION — JS ENGINE (MOBILE + DESKTOP SWITCHER)
   ═══════════════════════════════════════════════════════════════ */
   (function(){
     'use strict';
-    var section=document.getElementById('rsa-section');
-    var disc=document.getElementById('rsa-disc');
-    var glow=document.getElementById('rsa-glow');
-    var s1=document.getElementById('rsa-s1');
-    var s2=document.getElementById('rsa-s2');
-    var device=document.getElementById('rsa-device');
-    var screenOff=document.getElementById('rsa-screen-off');
-    var screenOn=document.getElementById('rsa-screen-on');
-    var headline=document.getElementById('rsa-headline');
-    var hint=document.getElementById('rsa-hint');
-    var badgeL=document.getElementById('rsa-bl');
-    var badgeR=document.getElementById('rsa-br');
-    var cards=document.querySelectorAll('.rsa-kcard');
+    var isMobile = window.innerWidth <= 860 || ('ontouchstart' in window && window.innerWidth <= 1024);
+    var mode = isMobile ? 'mobile' : 'desktop';
+    var raf = null, cardsDone = false, discRot = 0;
+
+    var section    = document.getElementById('rsa-section');
+    var disc       = document.getElementById('rsa-disc');
+    var o1         = document.getElementById('rsa-o1');
+    var o2         = document.getElementById('rsa-o2');
+    var o3         = document.getElementById('rsa-o3');
+    var headline   = document.getElementById('rsa-headline');
+    var hint       = document.getElementById('rsa-hint');
+    var badgeL     = document.getElementById('rsa-bl');
+    var badgeR     = document.getElementById('rsa-br');
+    var badgeLbl   = document.getElementById('rsa-badge-label');
+    var headlineH2 = document.getElementById('rsa-headline-h2');
+    var headlineP  = document.getElementById('rsa-headline-p');
+
+    var devMobile  = document.getElementById('dev-mobile');
+    var devDesktop = document.getElementById('dev-desktop');
+    var soffM      = document.getElementById('rsa-soff-m');
+    var sonM       = document.getElementById('rsa-son-m');
+    var soffD      = document.getElementById('rsa-soff-d');
+    var sonD       = document.getElementById('rsa-son-d');
+    var lidLogo    = document.getElementById('rsa-lid-logo');
+
     if(!section) return;
+
     function map(v,a,b,c,d){ return c+(d-c)*Math.max(0,Math.min(1,(v-a)/(b-a))); }
     function eO3(t){ return 1-Math.pow(1-t,3); }
     function eIO(t){ return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2; }
-    function eBk(t){ var c=1.70158+1; return 1+c*Math.pow(t-1,3)+1.70158*Math.pow(t-1,2); }
-    var raf=null, cardsDone=false, discRot=0;
-    function update(){
-      raf=null;
-      var rect=section.getBoundingClientRect();
-      var scrollable=section.offsetHeight-window.innerHeight;
-      if(scrollable<=0) return;
-      var scrolled=Math.max(0,-rect.top);
-      var p=Math.min(1,scrolled/scrollable);
-      /* Disco */
-      var dP=eO3(map(p,0,0.20,0,1));
-      var dScale=0.22+0.78*dP;
-      discRot=p*810;
-      var dOpacity=dP;
-      if(p>0.50) dOpacity*=(1-eO3(map(p,0.50,0.68,0,1)));
-      var dY=map(p,0,0.60,30,-18);
-      disc.style.opacity=dOpacity;
-      disc.style.transform='translate(-50%,calc(-50% + '+dY+'px)) scale('+dScale+') rotate('+discRot+'deg)';
-      var dg=Math.round(18+30*dP);
-      disc.style.boxShadow='0 0 0 '+dg+'px rgba(251,178,60,'+(0.06*dP)+'),0 0 0 '+(dg*2)+'px rgba(251,178,60,'+(0.03*dP)+')';
-      /* Phone */
-      var phP=eIO(map(p,0.08,0.65,0,1));
-      var phY=(1-phP)*window.innerHeight*1.1;
-      var phSc=0.82+0.18*phP;
-      device.style.transform='translate(-50%,calc(-50% + '+phY+'px)) scale('+phSc+')';
-      /* Tela */
-      var scrP=eO3(map(p,0.52,0.76,0,1));
-      screenOff.style.opacity=1-scrP;
-      screenOn.style.opacity=scrP;
-      /* Glow */
-      var glP=eO3(map(p,0.60,0.90,0,1));
-      glow.style.transform='translate(-50%,-50%) scale('+glP+')';
-      glow.style.opacity=glP*0.85;
-      s1.style.opacity=glP*0.9;
-      s2.style.opacity=glP*0.7;
-      /* Cards */
-      if(p>0.62&&!cardsDone){
-        cards.forEach(function(card){ var delay=parseInt(card.dataset.d||'0',10); setTimeout(function(){ card.classList.add('shown'); },delay); });
-        cardsDone=true;
-      }
-      if(p<0.30&&cardsDone){ cards.forEach(function(c){ c.classList.remove('shown'); }); cardsDone=false; }
-      /* Badges */
-      var bP=eBk(map(p,0.76,0.94,0,1));
-      var bX=(1-Math.max(0,bP))*22;
-      badgeL.style.opacity=Math.max(0,bP);
-      badgeL.style.transform='translateY(calc(-50% + '+(20-20*Math.max(0,bP))+'px)) translateX('+-bX+'px)';
-      badgeR.style.opacity=Math.max(0,bP);
-      badgeR.style.transform='translateY(calc(-50% + '+(20-20*Math.max(0,bP))+'px)) translateX('+bX+'px)';
-      /* Headline + hint */
-      headline.style.opacity=map(p,0.48,0.76,1,0.25);
-      hint.style.opacity=map(p,0,0.12,1,0);
+    function eBk(t){ var c=2.70158; return 1+c*Math.pow(t-1,3)+1.70158*Math.pow(t-1,2); }
+
+    function getActiveDevice(){ return mode==='mobile' ? devMobile : devDesktop; }
+    function getScreenOff(){    return mode==='mobile' ? soffM     : soffD; }
+    function getScreenOn(){     return mode==='mobile' ? sonM      : sonD; }
+    function getCards(){
+      return mode==='mobile'
+        ? document.querySelectorAll('#dev-mobile .rsa-pkcard')
+        : document.querySelectorAll('#dev-desktop .rsa-lcard');
     }
-    function onScroll(){ if(!raf) raf=requestAnimationFrame(update); }
-    window.addEventListener('scroll',onScroll,{passive:true});
-    window.addEventListener('resize',update,{passive:true});
+
+    function applyMode(){
+      if(mode === 'mobile'){
+        badgeLbl.textContent   = 'Painel Inteligente';
+        headlineH2.innerHTML   = 'Controle total das<br/>suas entregas';
+        headlineP.textContent  = 'Tudo em tempo real, na palma da mão da sua equipe.';
+        devMobile.classList.remove('hidden');
+        devDesktop.classList.add('hidden');
+      } else {
+        badgeLbl.textContent   = 'Painel de Controle';
+        headlineH2.innerHTML   = 'Gestão de entregas<br/>no seu desktop';
+        headlineP.textContent  = 'Dashboard completo em tempo real para toda a equipe.';
+        devDesktop.classList.remove('hidden');
+        devMobile.classList.add('hidden');
+      }
+    }
+
+    function update(){
+      raf = null;
+      var rect       = section.getBoundingClientRect();
+      var scrollable = section.offsetHeight - window.innerHeight;
+      if(scrollable <= 0) return;
+      var scrolled = Math.max(0, -rect.top);
+      var p = Math.min(1, scrolled / scrollable);
+
+      var dP     = eO3(map(p, 0, 0.20, 0, 1));
+      var dScale = 0.15 + 0.85*dP;
+      discRot    = p * 720;
+      var dOp    = dP;
+      if(p > 0.48) dOp *= (1 - eO3(map(p, 0.48, 0.66, 0, 1)));
+      var dY = map(p, 0, 0.56, 20, -12);
+      disc.style.opacity   = dOp;
+      disc.style.transform = 'translate(-50%,calc(-50% + '+dY+'px)) scale('+dScale+') rotate('+discRot+'deg)';
+      var dg = Math.round(18 + 28*dP);
+      disc.style.boxShadow = '0 0 0 '+dg+'px rgba(251,178,60,'+(0.07*dP)+'),0 0 0 '+(dg*2)+'px rgba(251,178,60,'+(0.03*dP)+')';
+
+      var phP  = eIO(map(p, 0.06, 0.62, 0, 1));
+      var phY  = (1 - phP) * window.innerHeight * 1.05;
+      var phSc = 0.80 + 0.20*phP;
+      getActiveDevice().style.transform = 'translate(-50%,calc(-50% + '+phY+'px)) scale('+phSc+')';
+
+      var scrP = eO3(map(p, 0.50, 0.74, 0, 1));
+      getScreenOff().style.opacity = 1 - scrP;
+      getScreenOn().style.opacity  = scrP;
+      if(lidLogo) lidLogo.style.opacity = Math.max(0, 1 - scrP * 1.6);
+
+      var glP = eO3(map(p, 0.56, 0.88, 0, 1));
+      if(o1) o1.style.opacity   = glP * 0.88;
+      if(o2) o2.style.opacity   = glP * 0.65;
+      if(o3) o3.style.opacity   = glP * 0.52;
+      if(o1) o1.style.transform = 'translate(-50%,-50%) scale('+(0.55+0.45*glP)+')';
+
+      if(p > 0.60 && !cardsDone){
+        getCards().forEach(function(card){
+          var delay = parseInt(card.dataset.d || '0', 10);
+          setTimeout(function(){ card.classList.add('shown'); }, delay);
+        });
+        cardsDone = true;
+      }
+      if(p < 0.28 && cardsDone){
+        getCards().forEach(function(c){ c.classList.remove('shown'); });
+        cardsDone = false;
+      }
+
+      var bP = eBk(map(p, 0.74, 0.93, 0, 1));
+      var bX = (1 - Math.max(0,bP)) * 24;
+      badgeL.style.opacity   = Math.max(0, bP);
+      badgeL.style.transform = 'translateY(calc(-50% + '+(20-20*Math.max(0,bP))+'px)) translateX('+-bX+'px)';
+      badgeR.style.opacity   = Math.max(0, bP);
+      badgeR.style.transform = 'translateY(calc(-50% + '+(20-20*Math.max(0,bP))+'px)) translateX('+bX+'px)';
+
+      headline.style.opacity = map(p, 0.46, 0.74, 1, 0.18);
+      hint.style.opacity     = map(p, 0, 0.10, 1, 0);
+    }
+
+    function onScroll(){ if(!raf) raf = requestAnimationFrame(update); }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', update,  {passive:true});
+
+    applyMode();
     update();
   })();
 </script>
